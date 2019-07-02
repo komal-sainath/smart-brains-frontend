@@ -34,7 +34,15 @@ class App extends Component {
       imageUrl: '',
       box: {},
       route: 'signin',
-      isSignedIn: false
+      isSignedIn: false,
+      user: {
+        id: '',
+        name: '',
+        email: '',
+        password: '',
+        entries: 0,
+        joined: new Date()
+      }
     }
   }
 
@@ -50,7 +58,14 @@ class App extends Component {
     rightCol: width - (clarifaiFace.right_col * width),
     bottomRow: height - (clarifaiFace.bottom_row * height)
   }
-  }
+}
+
+// componentDidMount() {
+//   fetch('http://localhost:3001')
+//   .then(response => response.json())
+//   .then(console.log)
+// }
+
 
   displayFaceBox = (box) => {
     this.setState({box: box});
